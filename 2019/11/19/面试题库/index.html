@@ -23,28 +23,35 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta property="og:type" content="website">
+<meta name="description" content="c&#x2F;c++基础const的用法 首先说说const的用法（绝对不能说是常数）  1）在定义的时候必须进行初始化2）指针可以是const  指针，也可以是指向const对象的指针3）定义为const的形参，即在函数内部是不能被修改的4）类的成员函数可以被声明为常成员函数，不能修改类的成员变量5）类的成员函数可以返回的是常对象，即被const声明的对象6）类的成员变量是常成员变量不能在声明时初始化，必">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2019/11/19/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="c&#x2F;c++基础const的用法 首先说说const的用法（绝对不能说是常数）  1）在定义的时候必须进行初始化2）指针可以是const  指针，也可以是指向const对象的指针3）定义为const的形参，即在函数内部是不能被修改的4）类的成员函数可以被声明为常成员函数，不能修改类的成员变量5）类的成员函数可以返回的是常对象，即被const声明的对象6）类的成员变量是常成员变量不能在声明时初始化，必">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-1c5da3391ad30aa7aa30f9362407a77f_b.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-dc0bdc69237df055ff8c2aa477887237_1440w.jpg">
+<meta property="article:published_time" content="2019-11-19T08:13:43.696Z">
+<meta property="article:modified_time" content="2020-11-02T13:22:25.865Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-1c5da3391ad30aa7aa30f9362407a77f_b.jpg">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2019/11/19/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
-<title>Hexo</title>
+<title> | Hexo</title>
   
 
 
@@ -129,7 +136,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -142,6 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#c-c-%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">c&#x2F;c++基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">const的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E5%8F%AA%E8%AF%BB"><span class="nav-number">1.1.1.</span> <span class="nav-text">const如何做到只读?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">static的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E4%B8%AD%EF%BC%8Cnew-delete%E5%92%8Cmalloc-free%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.</span> <span class="nav-text">C++中，new&#x2F;delete和malloc&#x2F;free的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof%E5%92%8Cstrlen%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.</span> <span class="nav-text">sizeof和strlen的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.5.</span> <span class="nav-text">指针和引用的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%A4%9A%E6%80%81%E6%80%A7%E3%80%81%E8%99%9A%E5%87%BD%E6%95%B0%E3%80%81%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E3%80%81%E7%BA%AF%E8%99%9A%E5%87%BD%E6%95%B0"><span class="nav-number">1.6.</span> <span class="nav-text">C++多态性、虚函数、虚函数表、纯虚函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84-ifndef-define-endif-%E5%B9%B2%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="nav-number">1.7.</span> <span class="nav-text">头文件中的 ifndef&#x2F;define&#x2F;endif 干什么用？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extern-c"><span class="nav-number">1.8.</span> <span class="nav-text">extern c</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c-11"><span class="nav-number">2.</span> <span class="nav-text">c++11</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#map%E3%80%81unordered-map"><span class="nav-number">2.1.</span> <span class="nav-text">map、unordered_map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">2.2.</span> <span class="nav-text">智能指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">右值引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PYTHON%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">PYTHON基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E4%B8%8Ec%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.0.1.</span> <span class="nav-text">python与c的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-%E7%9A%84GIL%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%E3%80%81%E5%A4%9A%E8%BF%9B%E7%A8%8B"><span class="nav-number">3.0.2.</span> <span class="nav-text">python 的GIL、多线程、多进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D-deepcopy"><span class="nav-number">3.0.3.</span> <span class="nav-text">深拷贝 deepcopy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python2%E5%92%8Cpython3%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">3.0.4.</span> <span class="nav-text">python2和python3区别？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Golang"><span class="nav-number">4.</span> <span class="nav-text">Golang</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.1.</span> <span class="nav-text">进程、线程、协程的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">协程的底层实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golang%E4%B8%AD%E7%9A%84channel"><span class="nav-number">4.3.</span> <span class="nav-text">golang中的channel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java"><span class="nav-number">5.</span> <span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">HashMap 的实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">5.2.</span> <span class="nav-text">深拷贝和浅拷贝区别是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-%E4%BA%8B%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">5.3.</span> <span class="nav-text">spring 事务实现方式有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB"><span class="nav-number">5.4.</span> <span class="nav-text">spring 的事务隔离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sleep-%E5%92%8C-wait-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">5.5.</span> <span class="nav-text">sleep() 和 wait() 有什么区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84-run-%E5%92%8C-start-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">5.6.</span> <span class="nav-text">线程的 run()和 start()有什么区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3"><span class="nav-number">6.</span> <span class="nav-text">数据结构与算法相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">6.1.</span> <span class="nav-text">数组和链表的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%EF%BC%88%E9%95%BF%E5%BA%A6%E6%9C%AA%E7%9F%A5%EF%BC%89%EF%BC%8C%E8%AF%B7%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%97%A2%E8%8A%82%E7%9C%81%E6%97%B6%E9%97%B4%E5%8F%88%E8%8A%82%E7%9C%81%E7%A9%BA%E9%97%B4%E7%9A%84%E7%AE%97%E6%B3%95%E6%9D%A5%E6%89%BE%E5%87%BA%E8%AF%A5%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACm%E4%B8%AA%E5%85%83%E7%B4%A0%E3%80%82"><span class="nav-number">6.2.</span> <span class="nav-text">给定一个单向链表（长度未知），请设计一个既节省时间又节省空间的算法来找出该链表中的倒数第m个元素。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#100w%E4%B8%AA%E6%95%B0%EF%BC%8C%E6%89%BE%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E7%9A%84100%E4%B8%AA%EF%BC%88%E7%94%A8%E5%BF%AB%E6%8E%92%EF%BC%89"><span class="nav-number">6.3.</span> <span class="nav-text">100w个数，找其中最大的100个（用快排）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%89%BE%E5%85%B6%E4%B8%AD%E4%B8%A4%E4%B8%A4%E7%9B%B8%E5%8A%A0%E5%92%8C%E4%B8%BAM%E7%9A%84%E5%A4%9A%E7%BB%84%E6%95%B0%E6%8D%AE%EF%BC%88%E7%94%A8m%E5%87%8F%E5%8E%BB%E6%89%80%E6%9C%89%E7%9A%84%E5%80%BC%E6%94%BE%E5%85%A5hash%E8%A1%A8%E4%B8%AD%EF%BC%89"><span class="nav-number">6.4.</span> <span class="nav-text">一组数据，找其中两两相加和为M的多组数据（用m减去所有的值放入hash表中）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E5%AE%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8C%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B4%E6%95%B0"><span class="nav-number">6.5.</span> <span class="nav-text">给定字符串，转换为整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC"><span class="nav-number">6.6.</span> <span class="nav-text">链表反转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">6.7.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="nav-number">6.8.</span> <span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">7.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">7.1.</span> <span class="nav-text">tcp三次握手的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">7.2.</span> <span class="nav-text">TCP四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-amp-UDP"><span class="nav-number">7.3.</span> <span class="nav-text">TCP&amp;UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5-URL-%E5%9C%B0%E5%9D%80%E5%88%B0%E6%98%BE%E7%A4%BA%E4%B8%BB%E9%A1%B5%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">7.4.</span> <span class="nav-text">在浏览器中输入 URL 地址到显示主页的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-amp-https"><span class="nav-number">7.5.</span> <span class="nav-text">http &amp; https</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E7%A8%8B%E7%B1%BB%E7%9B%B8%E5%85%B3"><span class="nav-number">8.</span> <span class="nav-text">工程类相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">8.1.</span> <span class="nav-text">多线程和多进程的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%92%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">8.2.</span> <span class="nav-text">动态链接和静态链接的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9CIO%E6%A8%A1%E5%9E%8B"><span class="nav-number">8.3.</span> <span class="nav-text">网络IO模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%94%A8%E8%BF%87Linux%E4%B8%AD%E7%9A%84epoll%E5%90%97%EF%BC%9F%E5%AE%83%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">8.4.</span> <span class="nav-text">有用过Linux中的epoll吗？它的作用是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span class="nav-number">8.5.</span> <span class="nav-text">redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx"><span class="nav-number">8.6.</span> <span class="nav-text">Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">8.7.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kafka"><span class="nav-number">8.8.</span> <span class="nav-text">kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">8.9.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-%E8%BF%9B%E7%A8%8B%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="nav-number">8.10.</span> <span class="nav-text">c++进程内存空间分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%BB%E9%94%81-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81"><span class="nav-number">8.11.</span> <span class="nav-text">什么是死锁?如何避免死锁</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E7%BB%B4"><span class="nav-number">9.</span> <span class="nav-text">运维</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -183,148 +191,10 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/24/Hello-World-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/24/Hello-World-0/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-11-24 17:48:18" itemprop="dateCreated datePublished" datetime="2020-11-24T17:48:18+08:00">2020-11-24</time>
-    </span>
 
   
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/24/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-11-24 17:47:18" itemprop="dateCreated datePublished" datetime="2020-11-24T17:47:18+08:00">2020-11-24</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
 
 
 <div class="post-block">
@@ -344,9 +214,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/11/19/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -376,7 +246,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="c-c-基础"><a href="#c-c-基础" class="headerlink" title="c/c++基础"></a>c/c++基础</h1><h2 id="const的用法"><a href="#const的用法" class="headerlink" title="const的用法"></a>const的用法</h2><ol>
+        <h1 id="c-c-基础"><a href="#c-c-基础" class="headerlink" title="c/c++基础"></a>c/c++基础</h1><h2 id="const的用法"><a href="#const的用法" class="headerlink" title="const的用法"></a>const的用法</h2><ol>
 <li>首先说说const的用法（绝对不能说是常数）</li>
 </ol>
 <p>1）在定义的时候必须进行初始化<br>2）指针可以是const  指针，也可以是指向const对象的指针<br>3）定义为const的形参，即在函数内部是不能被修改的<br>4）类的成员函数可以被声明为常成员函数，不能修改类的成员变量<br>5）类的成员函数可以返回的是常对象，即被const声明的对象<br>6）类的成员变量是常成员变量不能在声明时初始化，必须在构造函数的列表里进行初始化<br>（注：千万不要说const是个常数，会被认为是外行人的！！！！哪怕说个只读也行）<br>下面的声明都是什么意思？<br>const int a; a是一个常整型数<br>int const a; a是一个常整型数<br>const int *a; a是一个指向常整型数的指针，整型数是不可修改的，但指针可以<br>int * const a; a为指向整型数的常指针，指针指向的整型数可以修改，但指针是不可修改的<br>int const * a const; a是一个指向常整型数的常指针，指针指向的整型数是不可修改的，同时指针也是不可修改的<br>通过给优化器一些附加的信息，使用关键字const也许能产生更紧凑的代码。合理地使用关键字const可以使编译器很自然地保护那些不希望被改变的参数，防止其被无意的代码修改。简而言之，这样可以减少bug的出现。</p>
@@ -709,7 +579,6 @@
 <h1 id="运维"><a href="#运维" class="headerlink" title="运维"></a>运维</h1><p><a target="_blank" rel="noopener" href="https://www.hi-linux.com/posts/20287.html">https://www.hi-linux.com/posts/20287.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33967414">https://zhuanlan.zhihu.com/p/33967414</a></p>
 
-      
     </div>
 
     
@@ -717,11 +586,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/11/24/hello-world/" rel="next" title="Hello World">
+                  Hello World <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
