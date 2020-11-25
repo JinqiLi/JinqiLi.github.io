@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="下载后安装  安装package control  package control-&gt;pip-&gt;soda 安装soda主题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac sublime text3 环境设置">
+<meta property="og:url" content="http://example.com/2020/11/25/mac-sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="下载后安装  安装package control  package control-&gt;pip-&gt;soda 安装soda主题">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-25T06:37:19.000Z">
+<meta property="article:modified_time" content="2020-11-25T07:02:25.328Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/11/25/mac-sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>mac sublime text3 环境设置 | Hexo</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/mac-sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mac sublime text3 环境设置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-11-25 14:37:19 / Modified: 15:02:25" itemprop="dateCreated datePublished" datetime="2020-11-25T14:37:19+08:00">2020-11-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <ol>
+<li><p>下载后安装</p>
+</li>
+<li><p>安装package control</p>
+</li>
+<li><p>package control-&gt;pip-&gt;soda 安装soda主题</p>
+</li>
+</ol>
+<a id="more"></a>
+
+<ol start="4">
+<li><p>python2环境 tools-&gt;build system-&gt; new build system</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">&quot;cmd&quot;</span>: [<span class="string">&quot;/usr/bin/python&quot;</span>, <span class="string">&quot;-u&quot;</span>, <span class="string">&quot;$file&quot;</span>],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    “/usr/bin/python” 为机器上的python2命令所在目录</p>
+<p>​     保存为python2.sublime-build</p>
+</li>
+<li><p>python3环境：与python2类似</p>
+</li>
+<li><p>golang环境</p>
+<p>​    package control-&gt;安装Golang build<br>​    perferences -&gt; package settings -&gt; Golang Config -&gt; Settings-User<br>​    配置PATH和GOPATH</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="attr">&quot;PATH&quot;</span>: <span class="string">&quot;/usr/local/go/bin&quot;</span>, <span class="comment">//go安装路径</span></span><br><span class="line"> <span class="attr">&quot;GOPATH&quot;</span>: <span class="string">&quot;/Users/lijinqi/go&quot;</span> <span class="comment">// go env中的地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    跳转到package目录下，git clone <a target="_blank" rel="noopener" href="https://margo.sh/GoSublime">https://margo.sh/GoSublime</a><br>​    perferences -&gt; package settings -&gt; GoSublime-&gt; Settings-User</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;env&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;GOPATH&quot;</span>: <span class="string">&quot;/Users/lijinqi/go&quot;</span>, <span class="comment">// go env中的地址</span></span><br><span class="line">        <span class="attr">&quot;GOROOT&quot;</span>: <span class="string">&quot;/usr/local/go&quot;</span> <span class="comment">//go安装路径</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    tools-&gt;build system-&gt;选择Go<br>​    编写一个go程序，通过<code>command + shift + b</code>或者 <code>command + b</code>即可以在控制台运行该程序。   </p>
+</li>
+<li><p>配置</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">&quot;find_selected_text&quot;</span>: <span class="literal">true</span>,  <span class="comment">//!!! 搜索时自动填入所选内容</span></span><br><span class="line">　　<span class="attr">&quot;theme&quot;</span>: <span class="string">&quot;Soda Light 3.sublime-theme&quot;</span>,</span><br><span class="line">　　<span class="attr">&quot;color_scheme&quot;</span>: <span class="string">&quot;Packages/Color Scheme - Default/Mac Classic.tmTheme&quot;</span>,</span><br><span class="line">　　<span class="attr">&quot;font_size&quot;</span>: <span class="number">11</span>,</span><br><span class="line">　　<span class="attr">&quot;ignored_packages&quot;</span>:</span><br><span class="line">　　[</span><br><span class="line">　　<span class="string">&quot;Vintage&quot;</span></span><br><span class="line">　　],</span><br><span class="line">　　<span class="attr">&quot;show_encoding&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">　　<span class="attr">&quot;soda_classic_tabs&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">　　<span class="attr">&quot;soda_folder_icons&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">　　<span class="attr">&quot;highlight_line&quot;</span>: <span class="literal">true</span>, 　　   <span class="comment">// 高亮显示当前行</span></span><br><span class="line">　　<span class="attr">&quot;fade_fold_buttons&quot;</span>: <span class="literal">false</span>,   <span class="comment">// 代码折叠按钮一直显示</span></span><br><span class="line">　　<span class="attr">&quot;show_encoding&quot;</span>: <span class="literal">true</span>, 　　 <span class="comment">// 显示当前文件的编码</span></span><br><span class="line">　　<span class="attr">&quot;bold_folder_labels&quot;</span>: <span class="literal">true</span>,   <span class="comment">// 加粗文件夹名称</span></span><br><span class="line">　　<span class="attr">&quot;highlight_modified_tabs&quot;</span>: <span class="literal">true</span>,　　　　　　<span class="comment">// 着重标示修改过的文件</span></span><br><span class="line">    <span class="attr">&quot;update_check&quot;</span>: <span class="literal">false</span>,<span class="comment">//更新检查,</span></span><br><span class="line">     <span class="attr">&quot;save_on_focus_lost&quot;</span>: <span class="literal">true</span>, <span class="comment">//当你把焦点从当前编辑的文件移开的时候，这个文件会自动的保存掉。</span></span><br><span class="line">    <span class="attr">&quot;show_full_path&quot;</span>: <span class="literal">true</span>, <span class="comment">//显示全路径</span></span><br><span class="line">     <span class="attr">&quot;translate_tabs_to_spaces&quot;</span>: <span class="literal">true</span>, <span class="comment">//tab转为空格</span></span><br><span class="line">     <span class="attr">&quot;tab_size&quot;</span>: <span class="number">4</span>, <span class="comment">//tab代表4个空格</span></span><br><span class="line">　　<span class="comment">//&quot;trim_trailing_white_space_on_save&quot;: true, // 保存时去掉行尾无用空格</span></span><br><span class="line">　　<span class="attr">&quot;show_full_path&quot;</span>: <span class="literal">true</span>, 　　　　　　　　　　<span class="comment">// 显示全路径,默认</span></span><br><span class="line">　　<span class="comment">// &quot;show_line_endings&quot;: true, </span></span><br><span class="line">　　<span class="comment">// &quot;draw_white_space&quot;: &quot;all&quot;, 　　　　　　　// 显示所有空格，&quot;none&quot;|&quot;selection&quot;|&quot;all&quot;</span></span><br><span class="line">　　<span class="comment">// &quot;sublime_enhanced_keybindings&quot;: true, // 转到上一次编辑的地方</span></span><br><span class="line">　　<span class="comment">// &quot;word_wrap&quot;: true, 　　　　　　　　　　 // 文字根据屏幕大小自动换行，防止水平滚动 true | false | &quot;auto&quot;</span></span><br><span class="line">　　<span class="comment">// &quot;save_on_focus_lost&quot;: true, 　　　　　　 // 焦点丢失后自动保存</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="8">
+<li><p>插件<br>soda主题<br>BracketHighlighter 括号高亮</p>
+<p>prettyJson json格式化插件</p>
+<p>ConvertToUTF8：将除UTF8编码之外的其他编码文件在 Sublime Text 中转换成UTF8编码</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/25/vim%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/" rel="prev" title="vim开发环境设置">
+                  <i class="fa fa-chevron-left"></i> vim开发环境设置
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+</body>
+</html>
